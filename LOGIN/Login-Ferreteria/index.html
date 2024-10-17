@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form | Dan Aleko</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Formulario de inicio de sesión -->
+    <form id="loginForm">
+      <h1>Ferreteria UMG</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Usuario" required>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Contraseña" required>
+        <i class='bx bxs-lock-alt' ></i>
+      </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox">Recordar</label>
+        <a href="#">Olvidaste tu contraseña</a>
+      </div>
+      <button type="submit" class="btn">Acceso</button>
+      <div class="register-link">
+        <p>No tienes una cuenta? <a href="#" id="registerLink">Registrarse</a></p>
+      </div>
+      <div class="google-btn">
+        <button type="submit" class="btn">Iniciar sesión en Google</button>
+      </div>
+    </form>
+
+    <!-- Formulario de registro -->
+    <form id="registerForm" style="display:none;">
+      <h1>Crear cuenta</h1>
+      <div class="input-box">
+        <input type="text" placeholder="Nombres y apellidos" required>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="email" placeholder="Correo electrónico" required>
+        <i class='bx bxs-envelope'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Contraseña" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Vuelve a escribir la contraseña" required>
+        <i class='bx bxs-lock-alt'></i>
+      </div>
+      <button type="submit" class="btn">Crear tu cuenta</button>
+      <div class="login-link">
+        <p>¿Ya tienes una cuenta? <a href="#" id="loginLink">Inicia sesión</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const registerLink = document.getElementById('registerLink');
+    const loginLink = document.getElementById('loginLink');
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+
+    // Mostrar el formulario de registro al hacer clic en "Registrarse"
+    registerLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      loginForm.style.display = 'none';
+      registerForm.style.display = 'block';
+    });
+
+    // Mostrar el formulario de login al hacer clic en "Inicia sesión"
+    loginLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      registerForm.style.display = 'none';
+      loginForm.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
